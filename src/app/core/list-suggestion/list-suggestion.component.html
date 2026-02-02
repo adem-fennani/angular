@@ -1,0 +1,14 @@
+<h2>Liste des suggestions</h2>
+<input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher une suggestion" class="search-input" />
+<div *ngFor="let suggestion of filteredSuggestions" class="suggestion-card">
+  <h3>{{ suggestion.title }}</h3>
+  <p><strong>Catégorie:</strong> {{ suggestion.category }} | <strong>Date:</strong> {{ suggestion.date | date:'dd/MM/yyyy' }}</p>
+  <p>{{ suggestion.description }}</p>
+  <span>Status: {{ suggestion.status }}</span>
+  <span>Likes: {{ suggestion.nbLikes }}</span>
+  <br>
+  <div *ngIf="suggestion.status !== 'refusee'">
+    <button (click)="like(suggestion)">Like 👍</button>
+    <button (click)="addToFavorites(suggestion)">Ajouter aux favoris ⭐</button>
+  </div>
+</div>
