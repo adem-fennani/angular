@@ -4,6 +4,42 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 ---
 
+## Workshop 4 - Formulaires Réactifs
+
+### Ajouté
+- **SuggestionService** (`suggestion.service.ts`) - Service injectable pour la gestion des suggestions :
+  - `getSuggestions()` : Récupère la liste des suggestions
+  - `getSuggestionById(id)` : Récupère une suggestion par son ID
+  - `like(suggestion)` : Incrémente le nombre de likes
+  - `addToFavorites(suggestion)` : Ajoute une suggestion aux favoris
+  - `isFavorite(suggestion)` : Vérifie si une suggestion est en favoris
+  - `getFavorites()` : Récupère la liste des favoris
+- **Module Favorites** (`favorites.module.ts`) - Module de fonctionnalité pour les favoris
+- **Composant Favorites** (`app-favorites`) - Affichage de la liste des suggestions favorites
+- **Composant AddSuggestion** (`app-add-suggestion`) - Formulaire d'ajout de suggestion
+- **Composant SuggestionDetail** (`app-suggestion-detail`) - Affichage détaillé d'une suggestion
+
+### Formulaires Réactifs
+- **FormBuilder** - Construction du formulaire
+- **FormGroup** - Groupe de contrôles du formulaire
+- **Validators** - Validation des champs :
+  - `required` : Champs obligatoires
+  - `minLength(5)` : Longueur minimale pour le titre
+  - `minLength(10)` : Longueur minimale pour la description
+- **Gestion des erreurs** - Affichage conditionnel des messages d'erreur
+
+### Architecture
+- **Injection de dépendances** - Utilisation de `@Injectable({ providedIn: 'root' })`
+- **Refactorisation** - Déplacement des composants vers une structure modulaire
+- **Support SSR** - Configuration pour le rendu côté serveur (`app.module.server.ts`)
+
+### Navigation
+- Route `/favorites` - Page des suggestions favorites
+- Route `/suggestions/add` - Formulaire d'ajout de suggestion
+- Navigation programmatique avec `Router.navigate()`
+
+---
+
 ## Workshop 3 - Composants & Routing
 
 ### Ajouté
