@@ -4,6 +4,33 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 ---
 
+## Workshop 3 - Composants & Routing
+
+### Ajouté
+- **Composant Home** (`app-home`) - Page d'accueil de l'application
+- **Composant NotFound** (`app-notfound`) - Page 404 pour les routes inexistantes
+- **Composant SuggestionDetails** (`app-suggestion-details`) - Affichage détaillé d'une suggestion
+- **Composant SuggestionForm** (`app-suggestion-form`) - Formulaire de création/édition de suggestion
+- **Module Suggestions** - Module de fonctionnalité pour les suggestions
+- **Module Users** - Module de fonctionnalité pour les utilisateurs
+
+### Routing
+- **AppRoutingModule** - Configuration du routeur principal
+- **SuggestionsRoutingModule** - Routes du module suggestions
+- **UsersRoutingModule** - Routes du module utilisateurs
+- **Route par défaut** - Redirection vers la page d'accueil
+- **Route wildcard** (`**`) - Redirection vers la page 404
+- **Paramètres de route** - Navigation vers les détails d'une suggestion par ID
+
+### Fonctionnalités
+- **RouterModule** - Configuration et utilisation du routeur Angular
+- **RouterLink** - Navigation déclarative entre les pages
+- **RouterOutlet** - Affichage dynamique des composants routés
+- **ActivatedRoute** - Récupération des paramètres de route
+- **Lazy Loading** - Chargement différé des modules de fonctionnalités
+
+---
+
 ## Workshop 2 - Manipulation des Composants
 **Date : 02/02/2026**
 
