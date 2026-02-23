@@ -1,33 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './core/home/home.component';
-import { ListSuggestionComponent } from './features/suggestions/list-suggestion/list-suggestion.component';
-import { NotfoundComponent } from './core/notfound/notfound.component';
 
 const routes: Routes = [
-   { path: '', redirectTo: '/home', pathMatch: 'full' },  
-  { path: 'home', component: HomeComponent },
-  { path: 'listSuggestion', component: ListSuggestionComponent },
-
-  // LazyLoading
-  {
-    path: 'suggestions',
-    loadChildren: () =>
-      import('./features/suggestions/suggestions.module').then(m => m.SuggestionsModule)
-  },
-  {
-    path: 'users',
-    loadChildren: () =>
-      import('./features/users/users.module').then(m => m.UsersModule)
-  },
-   { path: 'suggestions', loadChildren: () => import('./features/suggestions/suggestions.module').then(m => m.SuggestionsModule) },
-   { path: 'users', loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule) },
-
-  { path: '**', component: NotfoundComponent } // wildcard
+  { path: '', loadChildren: () => import('./suggestions/suggestions.module').then(m => m.SuggestionsModule) },
+  { path: 'suggestions', loadChildren: () => import('./suggestions/suggestions.module').then(m => m.SuggestionsModule) },
+  { path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule) }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
